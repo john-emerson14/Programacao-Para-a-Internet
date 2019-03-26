@@ -1,9 +1,9 @@
-# -*- coding: utf-8 -*-
 import requests
 
 
 def main():
-    response = requests.get('http://www.google.com')
+    url = input('Url: ')
+    response = requests.get(url)
     print("Status code:", response.status_code)
     print("Cabeçalhos (response headers):", response.headers)
     print("Tamanho da resposta (content length):", response.headers['content-length'])

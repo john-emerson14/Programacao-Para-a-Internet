@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 import requests
 
 
 def main():
-    imagem = requests.get("https://www.bestservice.com/img_share/image/Products/Crypton/2D_miku_V4X.jpg").content
+    imagem = requests.get("https://www.nautiljon.com/images/people/00/62/hatsune_miku_13626.jpg").content
     open('imagem.jpg', 'wb').write(imagem)
 
 
