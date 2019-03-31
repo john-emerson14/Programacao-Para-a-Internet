@@ -1,14 +1,12 @@
 import requests
-import bs4
+from bs4 import BeautifulSoup
 
 
 def main():
-    url = "https://www.google.com.br"
-    html_page = requests.get(url).content
-    soup = bs4.BeautifulSoup(html_page, features="html.parser")
+    response = requests.get('http://www.google.com.br')
 
-    links = [link['href'] for link in soup('a') if 'href' in link.attrs]
-
+    html = BeautifulSoup(response.text, 'html.parser')
+    links = html.find_all('a')
     for link in links:
         print(link)
 
