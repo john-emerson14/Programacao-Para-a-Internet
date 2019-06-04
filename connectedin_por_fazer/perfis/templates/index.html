@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="col-lg-12">
+	<div class="panel panel-default">
+		{% if perfil_logado.convites_recebidos.count %}
+			<div class="panel-heading">
+				<strong>
+					Você tem {{ perfil_logado.convites_recebidos.count }}
+					convite{{ perfil_logado.convites_recebidos.count|pluralize }}
+					aguardando aprovação
+				</strong>
+			</div>
+			<ul class="list-group">
+				{% for convite in perfil_logado.convites_recebidos.all %}
+					<li class="list-group-item">
+
+						{{ convite.solicitante.nome }}
+						<a href="#" class="pull-right">aceitar</a>
+
+					</li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<div class="panel-body">
+				<p>Nenhum convite recebido :(</p>
+			</div>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}
