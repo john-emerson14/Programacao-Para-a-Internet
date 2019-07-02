@@ -35,5 +35,6 @@ def aceitar(request, convite_id):
     convite.aceitar()
     return redirect('index')
 
+
 def get_perfil_logado(request):
-    return Perfil.objects.get(id=1)
+    return Perfil.objects.get(id=2)
